@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public float jumpSpeed = 5f;
     public bool isJumping = false;
+    public bool isCrouching = false;
     private float jumpStartTime;
     public float jumpDuration = 0.5f; // Adjust this value for the duration of the jump
 
@@ -16,10 +17,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching)
         {
             Debug.Log("Player Jumped!");
             Jump();
+        }
+        
+        
+        if (((Input.GetMouseButton(1) || Input.GetKey(KeyCode.DownArrow)) && !isJumping && !isCrouching))
+        {
+            Debug.Log("Player Crouched!");
+            Crouch();
+        }
+        else
+        {
+            transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
         }
 
         if (isJumping)
@@ -43,5 +55,14 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = true;
         jumpStartTime = Time.time;
+    }
+
+    void Crouch()
+    {
+        isCrouching = true;
+        transform.localScale = new Vector3(3.0f, 2.0f, 3.0f);
+        isCrouching = false;
+        
+        
     }
 }
