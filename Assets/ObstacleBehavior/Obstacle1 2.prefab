@@ -93,11 +93,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4342522287287778350}
-  - component: {fileID: 511781519919512148}
-  - component: {fileID: 7743436444805139710}
+  - component: {fileID: 2199110154435554005}
+  - component: {fileID: 4485776214937886490}
+  - component: {fileID: 7571147997974873124}
   m_Layer: 0
-  m_Name: Obstacle1 1
-  m_TagString: Untagged
+  m_Name: Obstacle1 2
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,14 +112,14 @@ Transform:
   m_GameObject: {fileID: 4401127556805959174}
   m_LocalRotation: {x: 0, y: 0.043532234, z: 0, w: 0.99905205}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 4.78, z: 1}
+  m_LocalScale: {x: -3.62, y: 4.78, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4433848325683121827}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 4.99, z: 0}
---- !u!114 &511781519919512148
+--- !u!114 &2199110154435554005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyXPosition: -10
---- !u!114 &7743436444805139710
+--- !u!114 &4485776214937886490
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,3 +145,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+--- !u!61 &7571147997974873124
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401127556805959174}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

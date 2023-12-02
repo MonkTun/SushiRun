@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject canvasObject;
     // Start is called before the first frame update
     private static GameManager _instance;
     public static GameManager Instance
@@ -15,7 +16,18 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-
+    void Start()
+    {
+        // Ensure the canvasObject is initially deactivated
+        if (canvasObject != null)
+        {
+            canvasObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("CanvasObject is not assigned!");
+        }
+    }
     private void Awake()
     {
         _instance = this;
@@ -28,13 +40,19 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        // code here
-    }
-    
-    void Start()
-    {
-        
-    }
+        // Check if the canvasObject is assigned
+        if (canvasObject != null)
+        {
+            // Activate the canvasObject to show it
+            canvasObject.SetActive(true);
+
+            // Add any additional code or UI-related logic here
+        }
+        else
+        {
+            Debug.LogError("CanvasObject is not assigned!");
+        }
+    }   
 
     // Update is called once per frame
     void Update()
