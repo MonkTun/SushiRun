@@ -8,7 +8,7 @@ public class backgroundScroller : MonoBehaviour
     [Range(-1f, 1f)]
     private float offset;
 
-    public float scrollSpeed = 0.1f;
+    private float scrollSpeed = 1.0f;
 
     // public float accel = 10.0f;
     
@@ -22,10 +22,12 @@ public class backgroundScroller : MonoBehaviour
     void Update()
     {
         // increase speed every 10 seconds NEEDS FIXING (Invoke Repeating)
-        if (Mathf.FloorToInt(Time.deltaTime) % 10 == 0)
+        /*
+        if (Mathf.FloorToInt(Time.time) % 10 == 0)
         {
             scrollSpeed += 0.1f;
         }
+        */
         offset = (Time.time * scrollSpeed)/10.0f;
         mat.SetTextureOffset("_BaseMap", new Vector2(offset, 0));
         // Debug.Log($"Offset: {offset}");
