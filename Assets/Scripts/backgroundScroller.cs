@@ -16,7 +16,7 @@ public class backgroundScroller : MonoBehaviour
         mat = GetComponent<Renderer>().material;
 
         // InvokeRepeating to call IncreaseSpeed function every 10 seconds
-        InvokeRepeating("IncreaseSpeed", 0f, 1f);
+        InvokeRepeating("IncreaseSpeed", 0f, 3f);
     }
 
     void Update()
