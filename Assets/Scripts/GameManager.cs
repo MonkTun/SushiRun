@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -52,8 +53,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("CanvasObject is not assigned!");
         }
-    }   
+    }
 
+
+    public void Restart()
+    {
+        SceneManager.LoadScene("FINAL_game");
+        Time.timeScale = 1;
+    }
     // Update is called once per frame
     void Update()
     {
