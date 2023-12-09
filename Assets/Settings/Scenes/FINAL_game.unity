@@ -324,7 +324,7 @@ MonoBehaviour:
   - {fileID: 4401127556805959174, guid: ac5044f37f69a460ba528884ac74bb87, type: 3}
   - {fileID: 4401127556805959174, guid: 9d3d9bb0724a5479dbb36e2c3219f51a, type: 3}
   - {fileID: 4401127556805959174, guid: 3323345819ba0458cb8fe72411e0eab6, type: 3}
-  spawnPos: {x: 10, y: -3}
+  spawnPos: {x: 10, y: -4}
 --- !u!4 &339636617
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
