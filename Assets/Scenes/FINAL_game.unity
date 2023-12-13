@@ -1393,6 +1393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1920289802}
   - component: {fileID: 1920289801}
+  - component: {fileID: 1920289803}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1428,6 +1429,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1920289803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920289800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77320420686a44e5187abbdb5eac834f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundTracks:
+  - {fileID: 8300000, guid: 44bb2985c12be452eb66e4945e52a256, type: 3}
+  - {fileID: 8300000, guid: 50f936cda20134caeb1ef6280ff971bd, type: 3}
+  - {fileID: 8300000, guid: a4b30e8397b5f456fb608e5070cc55fd, type: 3}
+  - {fileID: 8300000, guid: b911781ff0e774c6dbc29a1430fde5d0, type: 3}
+  - {fileID: 8300000, guid: 917a3d57549144ac485aa83b3ae7ce5a, type: 3}
+  - {fileID: 8300000, guid: d03f7c6ee612b4e7181cfb921f31fbf2, type: 3}
+  - {fileID: 8300000, guid: f286d16c80d084f4b9cebea07728bcf2, type: 3}
+  soundList:
+  - audioClip: {fileID: 0}
+    clipName: 
+  - audioClip: {fileID: 0}
+    clipName: 
+  - audioClip: {fileID: 0}
+    clipName: 
 --- !u!1 &2073872436
 GameObject:
   m_ObjectHideFlags: 0
