@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PlayerLevelUp : MonoBehaviour
 {
-    public float Level = 1;
+    public int Level = 20;
     public float canLevelUp = 1; //amount of seconds it takes per level up
     public SpriteRenderer squareColor;
     
-    void _PlayerLevelUp(float l)
+    void _PlayerLevelUp(int l)
     {
         if(Time.time > canLevelUp && Level == l)
         { 
             print("level is" + l);
              // need to add a change of sprite when we get the art for sprites
             Level = Level + 1;
-            canLevelUp = canLevelUp + 3f; // change float to increase time per level up
+            canLevelUp = canLevelUp + 20; // change float to increase time per level up
         }
             
     }
