@@ -1152,6 +1152,7 @@ GameObject:
   - component: {fileID: 1761960662}
   - component: {fileID: 1761960664}
   - component: {fileID: 1761960665}
+  - component: {fileID: 1761960666}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1175,6 +1176,14 @@ MonoBehaviour:
   isJumping: 0
   isCrouching: 0
   jumpDuration: 0.5
+  spriteRenderer: {fileID: 1761960660}
+  playerLevelUp: {fileID: 1761960666}
+  jumpLevel1: {fileID: 21300000, guid: 0d618ab10cb7142aa96066c2578ac0fb, type: 3}
+  jumpLevel2: {fileID: 21300000, guid: 421a4212a4f8340a2a32325334f2f924, type: 3}
+  jumpLevel3: {fileID: 21300000, guid: 4a6480d8f5cdf49d2821c6b324ca5a01, type: 3}
+  jumpLevel4: {fileID: 21300000, guid: 2075a82273911485092e282c8ad12949, type: 3}
+  jumpLevel5: {fileID: 21300000, guid: 972a584b9980343358fafcb99d79567f, type: 3}
+  jumpLevel6: {fileID: 21300000, guid: 24f85a1b9a04749b0b4efd2db21fa360, type: 3}
 --- !u!50 &1761960659
 Rigidbody2D:
   serializedVersion: 4
@@ -1316,6 +1325,7 @@ MonoBehaviour:
   displayText: {fileID: 977467235}
   obstacleTag: Obstacle
   checkCollisionRadius: 1
+  scoreMultiplier: 3
 --- !u!95 &1761960665
 Animator:
   serializedVersion: 5
@@ -1337,6 +1347,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1761960666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761960657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59a0855aaf2ae3448f975b98fb2a044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Level: 1
+  canLevelUp: 20
+  squareColor: {fileID: 0}
 --- !u!1 &1853733970
 GameObject:
   m_ObjectHideFlags: 0

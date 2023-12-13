@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+      
         if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 1)
         {
             print("player jumped");
