@@ -4,31 +4,32 @@ using UnityEngine;
 
 public class backgroundScroller : MonoBehaviour
 {
+    // Start is called before the first frame update
     [Range(-1f, 1f)]
     private float offset;
 
     private float scrollSpeed = 1.0f;
 
+    // public float accel = 10.0f;
+    
     private Material mat;
-
     void Start()
     {
         mat = GetComponent<Renderer>().material;
-
-        // InvokeRepeating to call IncreaseSpeed function every 10 seconds
-       // InvokeRepeating("IncreaseSpeed", 0f, 3f);
     }
 
+    // Update is called once per frame
     void Update()
     {
-        offset = (Time.time * scrollSpeed) / 10.0f;
+        // increase speed every 10 seconds NEEDS FIXING (Invoke Repeating)
+        /*
+        if (Mathf.FloorToInt(Time.time) % 10 == 0)
+        {
+            scrollSpeed += 0.1f;
+        }
+        */
+        offset = (Time.time * scrollSpeed)/10.0f;
         mat.SetTextureOffset("_BaseMap", new Vector2(offset, 0));
-    }
-
-    // Function to increase speed
-    void IncreaseSpeed()
-    {
-        scrollSpeed += 1.0f;
-        Debug.Log($"Speed increased to: {scrollSpeed}");
+        // Debug.Log($"Offset: {offset}");
     }
 }
