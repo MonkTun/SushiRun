@@ -22,6 +22,8 @@ public class PlayerCollide : MonoBehaviour
         {
             GameManager.Instance.GameOver();
             Debug.Log("Player Collision");
+            Time.timeScale = 0;
+            SoundManager.Instance.GeneralPlaySoundEffect();
         }
     }
 }
