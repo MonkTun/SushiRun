@@ -10,19 +10,7 @@ public class SoundManager : MonoBehaviour
 
     // public AudioClip backgroundTrack; // change to bgm track
     public AudioClip[] backgroundTracks;
-
-    public Sound[] soundList;
     private AudioSource _audiosource;
-    private static SoundManager _instance;
-    public static SoundManager Instance
-    {
-        get
-        {
-            if (_instance is null)
-                Debug.LogError("Sound Manager is NULL");
-            return _instance;
-        }
-    }
     void Start()
     {
         // Play + Loop BGM
@@ -62,21 +50,5 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning("No background tracks found.");
         }
     }
-
-    public void GeneralPlaySoundEffect()
-    {
-        _audiosource.Play();
-    }
-    private void Awake()
-    {
-        _instance = this;
-    }
     
-}
-
-[System.Serializable]
-public struct Sound
-{
-    public AudioClip audioClip;
-    public string clipName;
 }
