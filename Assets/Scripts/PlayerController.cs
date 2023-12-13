@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private float jumpStartTime;
     public float jumpDuration = 0.5f; // Adjust this value for the duration of the jump
 
+
     private Vector2 initialPosition;
 
     void Start()
