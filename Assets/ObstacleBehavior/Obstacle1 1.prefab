@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4342522287287778350}
   - component: {fileID: 511781519919512148}
   - component: {fileID: 7743436444805139710}
-  - component: {fileID: -3998056643185324668}
+  - component: {fileID: 5772492613887744977}
   m_Layer: 0
   m_Name: Obstacle1 1
   m_TagString: Obstacle
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 4401127556805959174}
   m_LocalRotation: {x: 0, y: 0.043532234, z: 0, w: 0.99905205}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 4.78, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4433848325683121827}
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c7cfbc056f348bdb10f896e1ca065f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyXPosition: -10
+  destroyXPosition: -20
 --- !u!114 &7743436444805139710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
---- !u!61 &-3998056643185324668
-BoxCollider2D:
+--- !u!60 &5772492613887744977
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -168,6 +168,10 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.57571894}
+      - {x: -0.2183336, y: 0.19496289}
+      - {x: -0.48703554, y: -0.28436857}
+      - {x: 0.49619496, y: -0.30261713}
+      - {x: 0.24581093, y: 0.1265307}
