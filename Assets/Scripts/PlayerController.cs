@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            transform.localScale = new Vector3(3.0f, 3.0f, 3.0f);
+            transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
         }
 
         if (isJumping)
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     void Crouch()
     {
         isCrouching = true;
-        transform.localScale = new Vector3(3.0f, 2.0f, 3.0f);
+        transform.localScale = new Vector3(4.0f, 3.0f, 4.0f);
         isCrouching = false;
         
         
