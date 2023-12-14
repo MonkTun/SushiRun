@@ -10,7 +10,7 @@ public class PlayerLevelUp : MonoBehaviour
     
     void _PlayerLevelUp(int l)
     {
-        if(Time.time > canLevelUp && Level == l)
+        if(Time.timeSinceLevelLoad > canLevelUp && Level == l)
         { 
             print("level is" + l);
              // need to add a change of sprite when we get the art for sprites

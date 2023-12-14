@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
  
     public void Restart()
     {
-        SceneManager.LoadScene("FINAL_game");
+        SceneManager.LoadScene("FINAL_game", LoadSceneMode.Single);
         Time.timeScale = 1;
     }
     // Update is called once per frame
