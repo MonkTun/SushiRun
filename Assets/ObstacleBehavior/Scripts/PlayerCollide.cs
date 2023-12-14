@@ -23,7 +23,7 @@ public class PlayerCollide : MonoBehaviour
             GameManager.Instance.GameOver();
             Debug.Log("Player Collision");
             Time.timeScale = 0;
-            SoundManager.Instance.GeneralPlaySoundEffect();
+            SoundManager.Instance.GeneralPlaySoundEffect("Death_Sound");
         }
     }
 }

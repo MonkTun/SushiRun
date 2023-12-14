@@ -110,6 +110,8 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = true;
         jumpStartTime = Time.time;
+        // play jump sound
+        SoundManager.Instance.GeneralPlaySoundEffect("Jump_Sound");
     }
 
     void Crouch()

@@ -70,10 +70,18 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
-
-    public void GeneralPlaySoundEffect() //get parameter of name for the Clipname
+    
+    public void GeneralPlaySoundEffect(string name) //get parameter of name for the Clipname
     {
-        _audiosource.Play();
+        foreach (var soundObj in soundList)
+        {
+            if (soundObj.clipName == name)
+            {
+                print("Jump");
+                _audiosource.clip = soundObj.audioClip;
+                _audiosource.Play();
+            }
+        }
     }
     private void Awake()
     {
