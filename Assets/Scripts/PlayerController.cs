@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Sprite jumpLevel4;
     public Sprite jumpLevel5;
     public Sprite jumpLevel6;
+    private Animator animator; //setting the animator
         
 
     private Vector2 initialPosition;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         initialPosition = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -31,33 +33,39 @@ public class PlayerController : MonoBehaviour
       
         if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 1)
         {
+            FreezeRun();
             print("player jumped");
             Jump();
             spriteRenderer.sprite = jumpLevel1;
         }
         else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 2)
         {
+            FreezeRun();
             Jump();
             spriteRenderer.sprite = jumpLevel2;
         }
         else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 3)
         {
+            FreezeRun();
             Jump();
             spriteRenderer.sprite = jumpLevel3;
             
         }
         else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 4)
         {
+            FreezeRun();
             Jump();
             spriteRenderer.sprite = jumpLevel4;
         }
         else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 5)
         {
+            FreezeRun();
             Jump();
             spriteRenderer.sprite = jumpLevel5;
         }
         else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 6)
         {
+            FreezeRun();
             Jump();
             spriteRenderer.sprite = jumpLevel6;
             
@@ -86,11 +94,18 @@ public class PlayerController : MonoBehaviour
             if (elapsedTime >= jumpDuration)
             {
                 isJumping = false;
+                animator.enabled = true; //unfreezes te run animation
                 transform.position = initialPosition; // Ensure the object is exactly at the initial position
             }
         }
     }
 
+
+    void FreezeRun() //the function that freezes the running animation
+    {
+        animator.enabled = false;
+    }
+    
     void Jump()
     {
         isJumping = true;
