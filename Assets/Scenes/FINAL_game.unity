@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   canLevelUp: 20
-  squareColor: {fileID: 0}
+  squareColor: {fileID: 1761960660}
 --- !u!1 &1853733970
 GameObject:
   m_ObjectHideFlags: 0
