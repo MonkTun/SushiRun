@@ -78,8 +78,7 @@ public class SoundManager : MonoBehaviour
             if (soundObj.clipName == name)
             {
                 print("Jump");
-                _audiosource.clip = soundObj.audioClip;
-                _audiosource.Play();
+                _audiosource.PlayOneShot(soundObj.audioClip);
             }
         }
     }

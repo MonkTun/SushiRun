@@ -18,6 +18,8 @@ public class ScoreCounter : MonoBehaviour
         {
             count += Time.deltaTime * scoreMultiplier; // Adjust the multiplier to change the counting speed
             displayText.text = Mathf.FloorToInt(count).ToString();
+
+            GameManager.Instance.score = (int)count;
         }
 
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, checkCollisionRadius);
