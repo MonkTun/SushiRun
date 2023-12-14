@@ -33,10 +33,7 @@ public class SoundManager : MonoBehaviour
         
         // audiosource.clip = backgroundTrack;
 
-        _audiosource.loop = true;
-        
-        _audiosource.Play();
-        Debug.Log("BGM is playing");
+        BackgroundSoundtrack();
     }
     
     void PlayRandomTrack()
@@ -46,12 +43,9 @@ public class SoundManager : MonoBehaviour
         {
             // Choose a random index
             int randomIndex = Random.Range(0, backgroundTracks.Length);
-
-            // Set the chosen audio clip to the AudioSource
-            _audiosource.clip = backgroundTracks[randomIndex];
-
+            
             // Play the background track
-            _audiosource.Play();
+            _audiosource.PlayOneShot(backgroundTracks[randomIndex]);
 
             // Debug statement
             Debug.Log("Playing random background track: " + _audiosource.clip.name);
@@ -63,7 +57,21 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void GeneralPlaySoundEffect()
+    void BackgroundSoundtrack()
+    {
+        foreach (var soundObj in soundList)
+        {
+            if (soundObj.clipName == "Background_Music") // Clip MUST be names Background_Music
+            {
+                print("hello world");
+                //Play that audioclip
+                _audiosource.clip = soundObj.audioClip;
+                _audiosource.Play();
+            }
+        }
+    }
+
+    public void GeneralPlaySoundEffect() //get parameter of name for the Clipname
     {
         _audiosource.Play();
     }

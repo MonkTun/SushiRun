@@ -1496,7 +1496,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 917a3d57549144ac485aa83b3ae7ce5a, type: 3}
   - {fileID: 8300000, guid: d03f7c6ee612b4e7181cfb921f31fbf2, type: 3}
   - {fileID: 8300000, guid: f286d16c80d084f4b9cebea07728bcf2, type: 3}
-  soundList: []
+  soundList:
+  - audioClip: {fileID: 8300000, guid: c923b3df9acd2405a92bf89033dfef5c, type: 3}
+    clipName: Background_Music
 --- !u!1 &2073872436
 GameObject:
   m_ObjectHideFlags: 0
