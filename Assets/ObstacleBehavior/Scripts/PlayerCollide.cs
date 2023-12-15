@@ -24,11 +24,12 @@ public class PlayerCollide : MonoBehaviour
             Debug.Log("Player Collision");
             Time.timeScale = 0;
             SoundManager.Instance.GeneralPlaySoundEffect("Death_Sound");
+            print("Collision");
         }
-        else if (collision.gameObject.CompareTag("PowerUp"))
+        else if (collision.gameObject.CompareTag("Wasabi"))
         {
             Debug.LogWarning("powerup");
-            
+            Destroy(collision.gameObject);
         }
     }
 }
