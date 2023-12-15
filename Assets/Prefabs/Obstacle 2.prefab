@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2598514409703314581}
   - component: {fileID: 4116434870923617689}
   - component: {fileID: 5260474522912092312}
-  - component: {fileID: 4716966125541332810}
   m_Layer: 0
   m_Name: position fix (dont delete)
   m_TagString: Obstacle
@@ -111,32 +110,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.3}
-  m_EdgeRadius: 0
---- !u!61 &4716966125541332810
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5217866272625739407}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.15, y: -0.2}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.48}
-    newSize: {x: 0.96, y: 0.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.1}
   m_EdgeRadius: 0
 --- !u!1 &5583101443901074154
 GameObject:

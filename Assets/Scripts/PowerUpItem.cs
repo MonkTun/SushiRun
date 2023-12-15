@@ -19,4 +19,8 @@ public class PowerUpItem : MonoBehaviour
     {
         
     }
+    public void SoySauceScore()
+    {
+        
+    }
 }

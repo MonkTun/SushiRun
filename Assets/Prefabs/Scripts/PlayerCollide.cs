@@ -29,5 +29,10 @@ public class PlayerCollide : MonoBehaviour
             Destroy(collision.gameObject);
             isInvincible = true;
         }
+        else if (collision.gameObject.CompareTag("SoySauce"))
+        {
+            GameManager.Instance.score += 10;
+            Destroy(collision.gameObject);
+        }
     }
 }
