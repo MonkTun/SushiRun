@@ -19,13 +19,13 @@ public class PlayerLevelUp : MonoBehaviour
     
     void _PlayerLevelUp(int l)
     {
-        if(Time.timeSinceLevelLoad > canLevelUp && level == l)
+        if(Time.timeSinceLevelLoad > canLevelUp && level == l && l < 7)
         { 
             // need to add a change of sprite when we get the art for sprites
             level++;
             print("level is" + level);
             Animator.SetInteger("PlayerLevel", level);
-            canLevelUp = canLevelUp + 20; // change float to increase time per level up
+            canLevelUp = canLevelUp + 1; // change float to increase time per level up
             if (level != 1)
             {
                 levelupParticleSystem.Play();
