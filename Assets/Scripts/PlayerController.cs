@@ -1,3 +1,4 @@
+using System.Data.Common;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -70,8 +71,7 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.sprite = jumpLevel6;
             
         }
-        
-        
+
         if (((Input.GetMouseButton(1) || Input.GetKey(KeyCode.DownArrow)) && !isJumping && !isCrouching))
         {
             Debug.Log("Player Crouched!");
@@ -117,7 +117,6 @@ public class PlayerController : MonoBehaviour
     void Crouch()
     {
         isCrouching = true;
-        transform.localScale = new Vector3(4.0f, 3.0f, 4.0f);
         isCrouching = false;
         
         
