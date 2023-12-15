@@ -132,8 +132,8 @@ public class PlayerController : MonoBehaviour
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.position.y < Screen.height / 2)
-                if (touch.position.x < Screen.width / 2)
+            if (touch.position.y < Screen.height * 0.75f)
+                if (touch.position.x < Screen.width * 0.5f)
                 {
                     touchInputleftJump = true;
                     print("leftJump");
