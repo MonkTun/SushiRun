@@ -333,9 +333,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstaclePrefabs:
-  - {fileID: 4401127556805959174, guid: ac5044f37f69a460ba528884ac74bb87, type: 3}
-  - {fileID: 4401127556805959174, guid: 9d3d9bb0724a5479dbb36e2c3219f51a, type: 3}
-  - {fileID: 4401127556805959174, guid: 3323345819ba0458cb8fe72411e0eab6, type: 3}
+  - {fileID: 913097922180264948, guid: 2a8d997f11e134218afe44da81599f2a, type: 3}
+  - {fileID: 5583101443901074154, guid: 8029be934d2c4470499dea51b176652e, type: 3}
+  - {fileID: 7854219175569164575, guid: 1a99c7c206b2444f8a5a0198eb0e6800, type: 3}
   spawnPos: {x: 15, y: -4}
 --- !u!4 &339636617
 Transform:
