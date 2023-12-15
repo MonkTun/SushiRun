@@ -157,6 +157,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Standalone: com.MPIGameStudio.SushiRun
     iPhone: com.MPIGameStudio.SushiRun
   buildNumber:
     Standalone: 0

@@ -22,7 +22,7 @@ public class ObstacleMovement : MonoBehaviour
         {
             foreach (SpriteRenderer spriteRenderer in gameObject.GetComponentsInChildren<SpriteRenderer>())
             {
-                spriteRenderer.color = new Color(1, 1, 1, 0.65f);
+                spriteRenderer.color = new Color(1, 1, 1, 0.5f);
             }
 
             foreach (Collider2D col in colliders)
