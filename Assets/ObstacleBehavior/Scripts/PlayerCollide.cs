@@ -25,5 +25,10 @@ public class PlayerCollide : MonoBehaviour
             Time.timeScale = 0;
             SoundManager.Instance.GeneralPlaySoundEffect("Death_Sound");
         }
+        else if (collision.gameObject.CompareTag("PowerUp"))
+        {
+            Debug.LogWarning("powerup");
+            
+        }
     }
 }
