@@ -1460,12 +1460,14 @@ MonoBehaviour:
   jumpDuration: 0.5
   spriteRenderer: {fileID: 1761960660}
   playerLevelUp: {fileID: 1761960666}
+  currentPosition: 5
   jumpLevel1: {fileID: 21300000, guid: 0d618ab10cb7142aa96066c2578ac0fb, type: 3}
   jumpLevel2: {fileID: 21300000, guid: 421a4212a4f8340a2a32325334f2f924, type: 3}
   jumpLevel3: {fileID: 21300000, guid: 4a6480d8f5cdf49d2821c6b324ca5a01, type: 3}
   jumpLevel4: {fileID: 21300000, guid: 2075a82273911485092e282c8ad12949, type: 3}
   jumpLevel5: {fileID: 21300000, guid: 972a584b9980343358fafcb99d79567f, type: 3}
   jumpLevel6: {fileID: 21300000, guid: 24f85a1b9a04749b0b4efd2db21fa360, type: 3}
+  jumpLevel7: {fileID: 0}
 --- !u!50 &1761960659
 Rigidbody2D:
   serializedVersion: 4
@@ -1644,6 +1646,7 @@ MonoBehaviour:
   Level: 1
   canLevelUp: 20
   squareColor: {fileID: 1761960660}
+  Animator: {fileID: 1761960665}
 --- !u!1 &1853733970
 GameObject:
   m_ObjectHideFlags: 0

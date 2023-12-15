@@ -7,15 +7,18 @@ public class PlayerLevelUp : MonoBehaviour
     public int Level = 10;
     public float canLevelUp = 1f; //amount of seconds it takes per level up
     public SpriteRenderer squareColor;
+    public Animator Animator;
     
     void _PlayerLevelUp(int l)
     {
         if(Time.timeSinceLevelLoad > canLevelUp && Level == l)
         { 
             print("level is" + l);
-             // need to add a change of sprite when we get the art for sprites
+            // need to add a change of sprite when we get the art for sprites
             Level = Level + 1;
             canLevelUp = canLevelUp + 20; // change float to increase time per level up
+            
+            Animator.SetInteger("PlayerLevel", 1);
         }
             
     }

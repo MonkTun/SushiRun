@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpDuration = 0.5f; // Adjust this value for the duration of the jump
     public SpriteRenderer spriteRenderer;
     public PlayerLevelUp playerLevelUp;
-    
+    public float currentPosition = 5f;
     //sushi sprites
     public Sprite jumpLevel1;
     public Sprite jumpLevel2;
@@ -87,7 +87,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            transform.localScale = new Vector3(4.0f, 4.0f, 4.0f);
+            playerLevelUp.Animator.SetBool("is_sliding", false);
+            
+
         }
 
         if (isJumping)
@@ -125,8 +127,8 @@ public class PlayerController : MonoBehaviour
     void Crouch()
     {
         isCrouching = true;
+        playerLevelUp.Animator.SetBool("is_sliding", true);
         isCrouching = false;
-        
         
     }
 }
