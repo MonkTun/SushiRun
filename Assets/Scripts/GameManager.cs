@@ -6,10 +6,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    //PUBLIC FIELDS
+    
     public GameObject canvasObject;
-
     public TMP_Text bestScoreText;
-    // Start is called before the first frame update
+    public TMP_Text inGameScoreText;
+    
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -21,7 +23,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public int score;
+    public float score;
+    public bool isGameOver;
+    public float scoreMultiplier = 3.0f;
+    
+    //MONOBEHAVIOURS
     
     void Start()
     {
@@ -42,13 +48,39 @@ public class GameManager : MonoBehaviour
         _instance = this;
     }
 
-    public void AddScore()
+    void Update()
     {
-        // code here
+        AddScore();
+    }
+    
+    //PRIVATE METHODS
+    
+    private void AddScore()
+    {
+        if (!isGameOver)
+        {
+            score += Time.deltaTime * 3; // Adjust the multiplier to change the counting speed
+            inGameScoreText.text = Mathf.FloorToInt(score).ToString();
+        }
     }
 
+    private void SetBestScore(int value)
+    {
+        if (value > SavesManager.SavePlayerData.bestScore)
+        {
+            SavesManager.SetBestScore(value);
+            bestScoreText.text = $"NEW BEST\n{value}";
+        }
+        else
+            bestScoreText.text = $"score: {value}\n Best: {SavesManager.SavePlayerData.bestScore}";
+    }
+    
+    // PUBLIC METHODS
+    
     public void GameOver()
     {
+        isGameOver = true;
+        
         // Check if the canvasObject is assigned
         if (canvasObject != null)
         {
@@ -64,29 +96,14 @@ public class GameManager : MonoBehaviour
         
         //Save the best score to Savemanager
         //compare if the last saved best score is smaller than the score that it has now
-        Setbestscore(score);
+        SetBestScore((int)score);
     }
 
-    public void Setbestscore(int value)
-    {
-        if (value > SavesManager.SavePlayerData.bestScore)
-        {
-            SavesManager.SetBestScore(value);
-            bestScoreText.text = $"NEW BEST\n{value}";
-        }
-        else
-            bestScoreText.text = $"score: {value}\n Best: {SavesManager.SavePlayerData.bestScore}";
-    }
 
- 
     public void Restart()
     {
         SceneManager.LoadScene("FINAL_game", LoadSceneMode.Single);
         Time.timeScale = 1;
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

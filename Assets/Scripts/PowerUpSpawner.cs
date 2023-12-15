@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-    
+    [SerializeField] private int spawnPointInterval = 30;    
 
     [SerializeField]
     private GameObject[] powerups;
@@ -21,10 +21,10 @@ public class PowerUpSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.score % 10 == 0 && GameManager.Instance.score != lastSpawned)
+        if ((int)GameManager.Instance.score % spawnPointInterval == 0 && (int)GameManager.Instance.score != lastSpawned)
         {
             print(lastSpawned);
-            lastSpawned = GameManager.Instance.score;
+            lastSpawned = (int)GameManager.Instance.score;
             Instantiate(powerups[Random.Range(0, powerups.Length)], new Vector2(10, 1), Quaternion.identity);
         }
     }

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public BoxCollider2D defaultBoxCollider, crouchingBoxCollider;
+    
     public float jumpSpeed = 5f;
     public bool isJumping = false;
     public bool isCrouching = false;
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
         
 
     private Vector2 initialPosition;
+    
+    bool touchInputleftJump, touchInputRightCrouch;
 
     void Start()
     {
@@ -32,63 +36,50 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-      
-        if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 1)
-        {
-            FreezeRun();
-            print("player jumped");
-            Jump();
-            spriteRenderer.sprite = jumpLevel1;
-        }
-        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 2)
+        HandleMobileInput();
+        
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || touchInputleftJump) &&
+            !isJumping)
         {
             FreezeRun();
             Jump();
-            spriteRenderer.sprite = jumpLevel2;
-        }
-        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 3)
-        {
-            FreezeRun();
-            Jump();
-            spriteRenderer.sprite = jumpLevel3;
             
+            switch (playerLevelUp.level)
+            {
+                default:
+                    spriteRenderer.sprite = jumpLevel1; break;
+                case 1:
+                    spriteRenderer.sprite = jumpLevel1; break;
+                case 2:
+                    spriteRenderer.sprite = jumpLevel2; break;
+                case 3:
+                    spriteRenderer.sprite = jumpLevel3; break;
+                case 4:
+                    spriteRenderer.sprite = jumpLevel4; break;
+                case 5:
+                    spriteRenderer.sprite = jumpLevel5; break;
+                case 6:
+                    spriteRenderer.sprite = jumpLevel6; break;
+                case 7:
+                    spriteRenderer.sprite = jumpLevel7; break;
+            }
         }
-        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 4)
-        {
-            FreezeRun();
-            Jump();
-            spriteRenderer.sprite = jumpLevel4;
-        }
-        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 5)
-        {
-            FreezeRun();
-            Jump();
-            spriteRenderer.sprite = jumpLevel5;
-        }
-        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 6)
-        {
-            FreezeRun();
-            Jump();
-            spriteRenderer.sprite = jumpLevel6;
-            
-        }
-        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 7)
-        {
-            FreezeRun();
-            Jump();
-            spriteRenderer.sprite = jumpLevel7;
-            
-        }
-
-        if (((Input.GetMouseButton(1) || Input.GetKey(KeyCode.DownArrow)) && !isJumping && !isCrouching))
+        
+        
+        if (((Input.GetMouseButton(1) || Input.GetKey(KeyCode.DownArrow) || touchInputRightCrouch) && !isJumping))
         {
             Debug.Log("Player Crouched!");
             Crouch();
+            isCrouching = true;
+            defaultBoxCollider.enabled = false;
+            crouchingBoxCollider.enabled = true;
         }
         else
         {
             playerLevelUp.Animator.SetBool("is_sliding", false);
-            
+            isCrouching = false;
+            defaultBoxCollider.enabled = true;
+            crouchingBoxCollider.enabled = false;
 
         }
 
@@ -108,6 +99,9 @@ public class PlayerController : MonoBehaviour
                 transform.position = initialPosition; // Ensure the object is exactly at the initial position
             }
         }
+
+        touchInputleftJump = false;
+        touchInputRightCrouch = false;
     }
 
 
@@ -126,9 +120,30 @@ public class PlayerController : MonoBehaviour
 
     void Crouch()
     {
-        isCrouching = true;
+        //isCrouching = true;
         playerLevelUp.Animator.SetBool("is_sliding", true);
-        isCrouching = false;
+        //isCrouching = false;
         
     }
+    
+    // INPUT FOR MOBILE
+
+    private void HandleMobileInput()
+    {
+        
+        
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.position.x > Screen.width / 2)
+            {
+                touchInputleftJump = true;
+            }
+            else
+            {
+                touchInputRightCrouch = true;
+            }
+        }
+    }
+
+
 }

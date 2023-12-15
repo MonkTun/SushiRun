@@ -78,7 +78,7 @@ public class SoundManager : MonoBehaviour
         {
             if (soundObj.clipName == name)
             {
-                print("Jump");
+                //print("Jump");
                 _audiosource.PlayOneShot(soundObj.audioClip, soundObj.volume);
             }
         }
