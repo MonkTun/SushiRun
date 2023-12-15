@@ -14,4 +14,9 @@ public class PowerUpItem : MonoBehaviour
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
+
+    public void WasabiInvincibility()
+    {
+        
+    }
 }
