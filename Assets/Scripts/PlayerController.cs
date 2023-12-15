@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         HandleMobileInput();
         
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || touchInputleftJump) &&
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || touchInputleftJump) &&
             !isJumping)
         {
             FreezeRun();
@@ -66,9 +66,9 @@ public class PlayerController : MonoBehaviour
         }
         
         
-        if (((Input.GetMouseButton(1) || Input.GetKey(KeyCode.DownArrow) || touchInputRightCrouch) && !isJumping))
+        if (((Input.GetKey(KeyCode.DownArrow) || touchInputRightCrouch) && !isJumping))
         {
-            Debug.Log("Player Crouched!");
+            //Debug.Log("Player Crouched!");
             Crouch();
             isCrouching = true;
             defaultBoxCollider.enabled = false;
@@ -130,18 +130,19 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMobileInput()
     {
-        
-        
         foreach (Touch touch in Input.touches)
         {
-            if (touch.position.x > Screen.width / 2)
-            {
-                touchInputleftJump = true;
-            }
-            else
-            {
-                touchInputRightCrouch = true;
-            }
+            if (touch.position.y < Screen.height / 2)
+                if (touch.position.x < Screen.width / 2)
+                {
+                    touchInputleftJump = true;
+                    print("leftJump");
+                }
+                else
+                {
+                    print("rightCrouch");
+                    touchInputRightCrouch = true;
+                }
         }
     }
 

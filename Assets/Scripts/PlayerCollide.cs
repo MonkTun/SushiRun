@@ -19,19 +19,22 @@ public class PlayerCollide : MonoBehaviour
             }
             
             GameManager.Instance.GameOver();
-            Debug.Log("Player Collision");
+            //Debug.Log("Player Collision");
             Time.timeScale = 0;
             SoundManager.Instance.GeneralPlaySoundEffect("Death_Sound");
-            print("Collision");
+            //print("Collision");
         }
         else if (collision.gameObject.CompareTag("Wasabi"))
         {
-            Debug.LogWarning("powerup");
+            SoundManager.Instance.GeneralPlaySoundEffect("ItemGain");
+            
             Destroy(collision.gameObject);
             isInvincible = true;
         }
         else if (collision.gameObject.CompareTag("SoySauce"))
         {
+            SoundManager.Instance.GeneralPlaySoundEffect("ItemGain");
+            
             GameManager.Instance.score += 10;
             Destroy(collision.gameObject);
         }
