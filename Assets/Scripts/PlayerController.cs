@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Sprite jumpLevel4;
     public Sprite jumpLevel5;
     public Sprite jumpLevel6;
+    public Sprite jumpLevel7;
     private Animator animator; //setting the animator
         
 
@@ -69,6 +70,13 @@ public class PlayerController : MonoBehaviour
             FreezeRun();
             Jump();
             spriteRenderer.sprite = jumpLevel6;
+            
+        }
+        else if((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !isJumping && !isCrouching && playerLevelUp.Level == 7)
+        {
+            FreezeRun();
+            Jump();
+            spriteRenderer.sprite = jumpLevel7;
             
         }
 

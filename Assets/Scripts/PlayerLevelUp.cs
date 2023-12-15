@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerLevelUp : MonoBehaviour
 {
-    public int Level = 20;
-    public float canLevelUp = 1; //amount of seconds it takes per level up
+    public int Level = 10;
+    public float canLevelUp = 1f; //amount of seconds it takes per level up
     public SpriteRenderer squareColor;
     
     void _PlayerLevelUp(int l)
@@ -36,8 +36,5 @@ public class PlayerLevelUp : MonoBehaviour
         _PlayerLevelUp(6);
         _PlayerLevelUp(7);
         _PlayerLevelUp(8);
-        _PlayerLevelUp(9);
-        _PlayerLevelUp(10);
-
     }   
 }
