@@ -366,6 +366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerups:
   - {fileID: 4401127556805959174, guid: b1026b713811d4aaaaf76fe450751eac, type: 3}
+  - {fileID: 4401127556805959174, guid: 4e8dbac6940314ea0b8a62e4b4b3f236, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1467,7 @@ MonoBehaviour:
   jumpLevel4: {fileID: 21300000, guid: 2075a82273911485092e282c8ad12949, type: 3}
   jumpLevel5: {fileID: 21300000, guid: 972a584b9980343358fafcb99d79567f, type: 3}
   jumpLevel6: {fileID: 21300000, guid: 24f85a1b9a04749b0b4efd2db21fa360, type: 3}
+  jumpLevel7: {fileID: 0}
 --- !u!50 &1761960659
 Rigidbody2D:
   serializedVersion: 4

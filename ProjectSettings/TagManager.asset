@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - PowerUp
   - Wasabi
+  - SoySauce
   layers:
   - Default
   - TransparentFX
