@@ -1768,10 +1768,13 @@ MonoBehaviour:
   soundList:
   - audioClip: {fileID: 8300000, guid: c923b3df9acd2405a92bf89033dfef5c, type: 3}
     clipName: Background_Music
+    volume: 1
   - audioClip: {fileID: 8300000, guid: b279249db80764c25a70f0e72577c012, type: 3}
     clipName: Jump_Sound
+    volume: 0.05
   - audioClip: {fileID: 8300000, guid: 7a4651080f32849ffa216fa7d5222127, type: 3}
     clipName: Death_Sound
+    volume: 0.4
 --- !u!1 &2073872436
 GameObject:
   m_ObjectHideFlags: 0

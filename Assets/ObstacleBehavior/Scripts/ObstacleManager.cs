@@ -8,7 +8,7 @@ public class ObstacleManager : MonoBehaviour
     public Vector2 spawnPos = new Vector2(10, 0);
     private float _lastSpawnedTime;
     private float delay = 1;
-    private float speedincrease = 0.0005f;
+    private float speedincrease = 0.0001f;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,6 @@ public class ObstacleManager : MonoBehaviour
             _lastSpawnedTime = Time.time;
             delay = Random.Range(2, 4f);
         }
-        delay = Mathf.Clamp(delay - (float)Time.timeSinceLevelLoad * speedincrease, 0.6f, 4f);
+        delay = Mathf.Clamp(delay - (float)Time.timeSinceLevelLoad * speedincrease, 0.75f, 4f);
     }
 } 

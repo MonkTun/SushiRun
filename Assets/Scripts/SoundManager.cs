@@ -66,6 +66,7 @@ public class SoundManager : MonoBehaviour
                 print("hello world");
                 //Play that audioclip
                 _audiosource.clip = soundObj.audioClip;
+                _audiosource.loop = true;
                 _audiosource.Play();
             }
         }
@@ -78,7 +79,7 @@ public class SoundManager : MonoBehaviour
             if (soundObj.clipName == name)
             {
                 print("Jump");
-                _audiosource.PlayOneShot(soundObj.audioClip);
+                _audiosource.PlayOneShot(soundObj.audioClip, soundObj.volume);
             }
         }
     }
@@ -94,4 +95,6 @@ public struct Sound
 {
     public AudioClip audioClip;
     public string clipName;
+    [Range(0,1)]
+    public float volume;
 }

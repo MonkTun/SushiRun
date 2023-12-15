@@ -13,7 +13,11 @@ public class ObstacleMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isTrollOne = Random.Range(0, 10f) < 1f;
+        if (GameManager.Instance.score > 75) 
+            isTrollOne = Random.Range(0, 10f) < 0.5f;
+
+        if (isTrollOne)
+        gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 0.5f);
     }
 
     // Update is called once per frame
@@ -22,7 +26,7 @@ public class ObstacleMovement : MonoBehaviour
  
         speed = speed + (float)Time.timeSinceLevelLoad * speedincrease;
 
-        if (isTrollOne && speed > 0 && transform.position.x < -4)
+        if (isTrollOne && speed > 0 && transform.position.x < -3)
         {
             speed = -speed;
             
