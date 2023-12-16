@@ -9,11 +9,12 @@ TagManager:
   - PowerUp
   - Wasabi
   - SoySauce
+  - Guys
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Characters
   - Water
   - UI
   - 
