@@ -46,8 +46,7 @@ public class PlayerController : MonoBehaviour
             
             switch (playerLevelUp.level)
             {
-                default:
-                    spriteRenderer.sprite = jumpLevel1; break;
+                
                 case 1:
                     spriteRenderer.sprite = jumpLevel1; break;
                 case 2:
@@ -61,6 +60,8 @@ public class PlayerController : MonoBehaviour
                 case 6:
                     spriteRenderer.sprite = jumpLevel6; break;
                 case 7:
+                    spriteRenderer.sprite = jumpLevel7; break;
+                default:
                     spriteRenderer.sprite = jumpLevel7; break;
             }
         }
