@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class LobbyManager : MonoBehaviour
 {
-    private void Awake()
-    {
-        Application.targetFrameRate = 240;
-    }
-    
     public void Play()
     {
         SceneManager.LoadScene(1);

@@ -125,8 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a754aa3004cb24f3bb6ebcb5b54f45a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliders:
-  - {fileID: 3554659380887447321}
   speed: 20
 --- !u!114 &1373324266717266418
 MonoBehaviour:

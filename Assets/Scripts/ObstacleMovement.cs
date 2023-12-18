@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class ObstacleMovement : MonoBehaviour
 {
-    [SerializeField] private Collider2D[] colliders;
     public float speed = 20.0f;
-    
 
-    private float speedincrease = 0.0001f;
+    private float speedincrease = 0.0009f;
 
     private bool isTrollOne;
     
@@ -23,11 +21,6 @@ public class ObstacleMovement : MonoBehaviour
             foreach (SpriteRenderer spriteRenderer in gameObject.GetComponentsInChildren<SpriteRenderer>())
             {
                 spriteRenderer.color = new Color(1, 1, 1, 0.5f);
-            }
-
-            foreach (Collider2D col in colliders)
-            {
-                col.enabled = false;
             }
         }
     }

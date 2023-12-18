@@ -70,11 +70,9 @@ public class GameManager : MonoBehaviour
         {
             SavesManager.SetBestScore(value);
             bestScoreText.text = $"NEW BEST\n{value}";
-            
         }
         else
             bestScoreText.text = $"score: {value}\n Best: {SavesManager.SavePlayerData.bestScore}";
-            PlayfabManager.Instance.SendLeaderBoard(value);
     }
     
     // PUBLIC METHODS

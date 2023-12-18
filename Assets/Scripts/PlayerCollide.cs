@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCollide : MonoBehaviour
 {
-    [SerializeField] private GameObject wasabiShield;
     private bool isInvincible = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -14,7 +13,6 @@ public class PlayerCollide : MonoBehaviour
             if (isInvincible)
             {
                 isInvincible = false;
-                wasabiShield.SetActive(false);
                 Destroy(collision.gameObject);
                 SoundManager.Instance.GeneralPlaySoundEffect("WasabiPower");
                 return;
@@ -32,7 +30,6 @@ public class PlayerCollide : MonoBehaviour
             
             Destroy(collision.gameObject);
             isInvincible = true;
-            wasabiShield.SetActive(true);
         }
         else if (collision.gameObject.CompareTag("SoySauce"))
         {
