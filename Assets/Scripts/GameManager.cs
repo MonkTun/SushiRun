@@ -104,33 +104,17 @@ public class GameManager : MonoBehaviour
         //compare if the last saved best score is smaller than the score that it has now
         SetBestScore((int)score);
 
-        PlayfabManager.Instance.GetPlacement(OnLeaderBoardGet);
+        //PlayfabManager.Instance.GetPlacement(OnLeaderBoardGet);
     }
 
-    private void OnLeaderBoardGet(GetLeaderboardResult result)
-    {
-        // Find the player's leaderboard entry
-        var playerEntry = result.Leaderboard.Find(entry => entry.PlayFabId == PlayfabManager.Instance.localPlayerId);
-
-        if (playerEntry != null)
-        {
-            // Calculate the top percentage
-            int playerPosition = playerEntry.Position; // Assuming Position starts at 1 for the top player
-            int totalEntries = result.Leaderboard.Count;
-            float topPercentage = ((float)(playerPosition) / totalEntries) * 100;
-
-            // Display the result
-            bestScoreText.text += "\nTop " + topPercentage.ToString("F2") + "%";
-        }
-        else
-        {
-            // Handle case where player is not found in the leaderboard
-            recordText.text = "Player not found in leaderboard";
-        }
-    }
+	private void OnLeaderBoardGet(GetLeaderboardAroundPlayerResult result)
+	{
+		recordText.text = $"Your best score is {result.Leaderboard[0].Position}";
+	}
 
 
-    public void Restart()
+
+	public void Restart()
     {
         SceneManager.LoadScene("FINAL_game", LoadSceneMode.Single);
         Time.timeScale = 1;

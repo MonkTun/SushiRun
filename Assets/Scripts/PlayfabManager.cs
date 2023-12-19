@@ -79,7 +79,7 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.GetLeaderboard(request, callback, OnError);
     }
 
-    public void GetPlacement(Action<GetLeaderboardResult> callback)
+    public void GetPlacement(Action<GetLeaderboardAroundPlayerResult> callback)
     {
         if (!PlayFabClientAPI.IsClientLoggedIn())
         {
@@ -87,12 +87,13 @@ public class PlayfabManager : MonoBehaviour
             return;
         }
         
-        var request = new GetLeaderboardRequest()
+        var request = new GetLeaderboardAroundPlayerRequest()
         {
             StatisticName = "BestScore",
+            MaxResultsCount = 2
         };
         
-        PlayFabClientAPI.GetLeaderboard(request, callback, OnError);
+        PlayFabClientAPI.GetLeaderboardAroundPlayer(request, callback, OnError);
     }
     
     // Login METHODS
