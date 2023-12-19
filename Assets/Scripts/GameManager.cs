@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using PlayFab.ClientModels;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvasObject;
     public TMP_Text bestScoreText;
     public TMP_Text inGameScoreText;
+    public TMP_Text recordText;
     
     private static GameManager _instance;
     public static GameManager Instance
@@ -74,7 +77,8 @@ public class GameManager : MonoBehaviour
         }
         else
             bestScoreText.text = $"score: {value}\n Best: {SavesManager.SavePlayerData.bestScore}";
-            PlayfabManager.Instance.SendLeaderBoard(value);
+        
+        PlayfabManager.Instance.SendLeaderBoard(SavesManager.SavePlayerData.bestScore);
     }
     
     // PUBLIC METHODS
@@ -99,6 +103,30 @@ public class GameManager : MonoBehaviour
         //Save the best score to Savemanager
         //compare if the last saved best score is smaller than the score that it has now
         SetBestScore((int)score);
+
+        PlayfabManager.Instance.GetPlacement(OnLeaderBoardGet);
+    }
+
+    private void OnLeaderBoardGet(GetLeaderboardResult result)
+    {
+        // Find the player's leaderboard entry
+        var playerEntry = result.Leaderboard.Find(entry => entry.PlayFabId == PlayfabManager.Instance.localPlayerId);
+
+        if (playerEntry != null)
+        {
+            // Calculate the top percentage
+            int playerPosition = playerEntry.Position; // Assuming Position starts at 1 for the top player
+            int totalEntries = result.Leaderboard.Count;
+            float topPercentage = ((float)(playerPosition) / totalEntries) * 100;
+
+            // Display the result
+            bestScoreText.text += "\nTop " + topPercentage.ToString("F2") + "%";
+        }
+        else
+        {
+            // Handle case where player is not found in the leaderboard
+            recordText.text = "Player not found in leaderboard";
+        }
     }
 
 

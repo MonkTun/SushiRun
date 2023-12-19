@@ -25,7 +25,7 @@ public class PlayerLevelUp : MonoBehaviour
             level++;
             print("level is" + level);
             Animator.SetInteger("PlayerLevel", level);
-            canLevelUp = canLevelUp + 1; // change float to increase time per level up
+            canLevelUp = canLevelUp + 20; // change float to increase time per level up
             if (level != 1)
             {
                 levelupParticleSystem.Play();

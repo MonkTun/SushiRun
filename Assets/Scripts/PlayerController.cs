@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.isGameOver) return;
+        
         HandleMobileInput();
         
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || touchInputleftJump) &&
