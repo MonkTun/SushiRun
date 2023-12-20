@@ -102,7 +102,7 @@ public class PlayfabManager : MonoBehaviour
     {
         var request = new LoginWithCustomIDRequest()
         {
-            CustomId = SystemInfo.deviceUniqueIdentifier,
+            CustomId = SavesManager.DeviceUniqueIdentifier,
             CreateAccount = true,
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams()
             {

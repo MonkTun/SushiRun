@@ -38,6 +38,33 @@ public static class SavesManager
     
         Save();
     }
+
+	public static string DeviceUniqueIdentifier
+	{
+		get
+		{
+            var deviceId = "";
+
+#if UNITY_ANDROID
+                AndroidJavaClass up = new AndroidJavaClass ("com.unity3d.player.UnityPlayer");
+                AndroidJavaObject currentActivity = up.GetStatic<AndroidJavaObject> ("currentActivity");
+                AndroidJavaObject contentResolver = currentActivity.Call<AndroidJavaObject> ("getContentResolver");
+                AndroidJavaClass secure = new AndroidJavaClass ("android.provider.Settings$Secure");
+                deviceId = secure.CallStatic<string> ("getString", contentResolver, "android_id");
+#elif UNITY_WEBGL
+                if (!PlayerPrefs.HasKey("UniqueIdentifier")) 
+                {
+
+                    PlayerPrefs.SetString("UniqueIdentifier", Guid.NewGuid().ToString());
+                    PlayerPrefs.Save();
+                }
+                deviceId = PlayerPrefs.GetString("UniqueIdentifier");
+#else
+            deviceId = SystemInfo.deviceUniqueIdentifier;
+#endif
+			return deviceId;
+		}
+	}
 }
 
 [System.Serializable]
